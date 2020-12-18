@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="16394" started-at="2020-12-18T03:43:33 EST" finished-at="2020-12-18T03:43:49 EST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="16394" started-at="2020-12-18T03:43:33 EST" finished-at="2020-12-18T03:43:49 EST">
+      <class name="handlingAlerts.HandligJavaScriptAlertPopUps$AlertInterface">
+        <test-method status="PASS" signature="alertWindow()[pri:0, instance:handlingAlerts.HandligJavaScriptAlertPopUps$AlertInterface@5cdd8682]" name="alertWindow" duration-ms="16318" started-at="2020-12-18T03:43:33 EST" finished-at="2020-12-18T03:43:49 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alertWindow -->
+      </class> <!-- handlingAlerts.HandligJavaScriptAlertPopUps$AlertInterface -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
