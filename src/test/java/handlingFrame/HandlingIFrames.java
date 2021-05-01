@@ -28,7 +28,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 public class HandlingIFrames {
-	
 	static WebDriver driver;
 	static String url="http://www.naukri.com/";
 	

@@ -26,8 +26,8 @@ public class HandligJavaScriptAlertPopUps {
 			Thread.sleep(3000);
 			//switching to the alert pop-up
 			Alert alert = driver.switchTo().alert();
-			String print = alert.getText();
-			System.out.println(print);
+			String alertText = alert.getText();
+			System.out.println(alertText);
 			//performing an accept action on the alert
 			alert.accept();
 			Thread.sleep(3000);

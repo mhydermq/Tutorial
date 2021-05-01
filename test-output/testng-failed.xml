@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="handlingFrame.HandlingIFrames">
+      <class name="javascriptExecutor.CurrentUrlAndDomain">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="handleFrame"/>
+          <include name="getUrlAndDomainName"/>
+          <include name="driverSetUp"/>
         </methods>
-      </class> <!-- handlingFrame.HandlingIFrames -->
+      </class> <!-- javascriptExecutor.CurrentUrlAndDomain -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

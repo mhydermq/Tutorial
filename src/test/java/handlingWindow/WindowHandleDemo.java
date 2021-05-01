@@ -21,27 +21,32 @@ public class WindowHandleDemo {
 
 		// return the parent window name as a String
 		String pw =driver.getWindowHandle();
-		System.out.println("parent window name- "+pw);
+		System.out.println("parent windowHandle/name- "+ pw);
+		String pageTitle = driver.getTitle();
+		System.out.println("pw title - "+pageTitle);
+		
 		// get the child window names as a set of strings
 		Set<String> set =driver.getWindowHandles();
 		System.out.println("windowHandles are- "+ set);
 
 		//iterate child windows using Iterator
-		Iterator<String> ite= set.iterator();
+		Iterator<String> ite = set.iterator();
 		while(ite.hasNext()){
-		String child_window=ite.next();
+		String child_window = ite.next();
 		if(!pw.equals(child_window)){
 		driver.switchTo().window(child_window);
-        //print the titles of the child windows
-		System.out.println(driver.switchTo().window(child_window).getTitle());
+        
+		//print the titles of child windows
+		System.out.println("cw title - "
+		+driver.switchTo().window(child_window).getTitle());
 		driver.close();
 		  }
 	}
 		//switch to the parent window
 		driver.switchTo().window(pw);
-		System.out.println("wnidowHandle- " + pw);
+		System.out.println("pw title - "+ driver.getTitle());
+		System.out.println("parent wnidowHandle- " + pw); 
 		driver.quit();
-
 		}
 	}
 
