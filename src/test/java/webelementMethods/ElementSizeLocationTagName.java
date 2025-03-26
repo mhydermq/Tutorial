@@ -3,9 +3,10 @@ package webelementMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import baseClass.DriverSetUp;
 
 
 /**
@@ -16,14 +17,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * @author hyder
  */
 
-public class ExampleWebEleMethods {
-	public static void main(String[] args) {
-		System.setProperty("webdriver.gecko.driver", 
-				"C:\\Users\\hyder\\Downloads\\geckodriver-v0.27.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
+public class ElementSizeLocationTagName extends DriverSetUp{
+	
+	@Test
+	public void testWebElementMethods() {
+		
 		String Url = "https://google.com";
 		driver.get(Url);
-		WebElement sigin = driver.findElement(By.id("gb_70"));
+		WebElement sigin = driver.findElement(By.xpath("//span[text()='Sign in']"));
 		
 		//getLocation() WebElement method
 		Point location = sigin.getLocation();
@@ -43,8 +44,6 @@ public class ExampleWebEleMethods {
 		String tagName = sigin.getTagName();
 		System.out.println("Tagname: "+tagName);
 		
-		//close the browser
-		driver.quit();
 	}
 
 }

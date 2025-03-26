@@ -3,23 +3,17 @@
  */
 package navigation;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import baseClass.DriverSetUp;
 
 
-public class ElementWithMultipleClassNames {
+public class ElementWithMultipleClassNames extends DriverSetUp {
 	
-	WebDriver driver;
+
 	 
-	@BeforeClass
+	@Test
 	public void multipleClassnameWithClassNameLocator(){
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver(); 
 		driver.get("https://www.yatra.com/");		
 		//driver.findElement(By.className("required_field cityPadRight ac_input origin_ac")).sendKeys("DELHI");
 		System.out.println("Page title0- "+ driver.getTitle());
@@ -51,11 +45,6 @@ public class ElementWithMultipleClassNames {
 		//i.e. .classname1.classname2.classname3
 		driver.findElement(By.cssSelector(".required_field.cityPadRight.ac_input.origin_ac']"))
 		.sendKeys("DELHI");
-	}
-	@AfterClass
-	public void teardown() {
-		driver.quit();
-		
 	}
 	
 }

@@ -3,54 +3,41 @@ package coordinates;
 //http://www.projectdebug.com/xy-coordinates-of-a-webelement-in-selenium/
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class XYCoordinates {
+import baseClass.DriverSetUp;
 
-	  WebDriver driver;
-	 @BeforeTest
-	 public void setup(){
-	  System.setProperty("webdriver.chrome.driver", 
-			  "C:\\Users\\hyder\\Downloads\\chromedriver_win32\\chromedriver.exe");
-	 }
+
+public class XYCoordinates extends DriverSetUp {
+     
+	static String url="https://www.google.com";
 	 
-	 @AfterMethod
-	 public void endTest() {
-		 driver.quit();
-	 }
-	 
-      
-	 //to get XY coordinates of a webelement in selenium webdriver
-	  @Test
+	// XY coordinates of a webelement in selenium webdriver
+	  @Test(priority=1)
 	 public void getCoordinates(){
-	  driver = new ChromeDriver();
-	  driver.get("https://www.google.com");
-	  WebElement element = driver.findElement(By.id("hplogo"));
-	  
+	  driver.get(url);
+	  WebElement element = driver.findElement(By.xpath("//*[@id='gb']/div/div[2]/a"));
 	  Point location = element.getLocation();
 	  int x = location.getX();
 	  int y = location.getY();
 	  System.out.println("Coordinates of the element is : " + x + " and " + y);
-	  System.out.println("*exiting @Test with no priority");
+	  System.out.println("*exiting @Test with priority 1 ");
 	 }
 	  
-	 //the size of our webelement in height and width.
+	 
+	  // size of our webelement in height and width.
 	  @Test(priority=0)
 	 public void getHeightWidth(){
-	  driver = new ChromeDriver();
-	  driver.get("https://www.google.com");
-	  WebElement element = driver.findElement(By.id("hplogo"));
+	  driver.get(url);
+	  WebElement element = driver.findElement(By.xpath("//*[@id='gb']/div/div[2]/a"));
 	  System.out.println(element.getText());
 
 	   int elementWidth = element.getSize().getWidth();
 	  System.out.println("Element width: "+ elementWidth);
 	  int elementHeight = element.getSize().getHeight();
-	  System.out.println("Element width: "+ elementHeight);
+	  System.out.println("Element Height : "+ elementHeight);
+	 
 
 	 }
 

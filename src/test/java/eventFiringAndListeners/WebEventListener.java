@@ -3,11 +3,12 @@ package eventFiringAndListeners;
 //Selenium easy
 
 /**
+ * Seleniumeasy:
  * This class implements the WebDriverEventListener, 
  * which is included under events.The purpose of implementing 
  * this interface is to override all the methods and define 
  * certain useful  Log statements which would be displayed/logged 
- * as the application under test is being run.Do not call any of 
+ * as the application under test is being run. Do not call any of 
  * these methods, instead these methods will be invoked 
  * automatically as an when the action done (click, findBy etc). 
  
@@ -19,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
+@SuppressWarnings("deprecation")
 public class WebEventListener implements WebDriverEventListener {
 
 	public void beforeNavigateTo(String url, WebDriver driver) {
@@ -74,15 +76,6 @@ public class WebEventListener implements WebDriverEventListener {
 		System.out.println("Found Element By : " + by.toString());
 	}
 
-	/*
-	 * non overridden methods of WebListener class
-	 */
-	public void beforeScript(String script, WebDriver driver) {
-	}
-
-	public void afterScript(String script, WebDriver driver) {
-	}
-
 	@Override
 	public void beforeAlertAccept(WebDriver driver) {
 		// TODO Auto-generated method stub
@@ -132,6 +125,18 @@ public class WebEventListener implements WebDriverEventListener {
 	}
 
 	@Override
+	public void beforeScript(String script, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterScript(String script, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
 	public void beforeSwitchToWindow(String windowName, WebDriver driver) {
 		// TODO Auto-generated method stub
 		
@@ -167,4 +172,5 @@ public class WebEventListener implements WebDriverEventListener {
 		
 	}
 
+	
 }
